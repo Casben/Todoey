@@ -14,6 +14,7 @@
 		CB7FC9E5250D1D4C00B3CBF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC9E4250D1D4C00B3CBF7 /* Assets.xcassets */; };
 		CB7FC9E8250D1D4C00B3CBF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7FC9E6250D1D4C00B3CBF7 /* LaunchScreen.storyboard */; };
 		CB7FC9F7250FC88600B3CBF7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7FC9F5250FC88600B3CBF7 /* DataModel.xcdatamodeld */; };
+		CB7FCA1C25103DD400B3CBF7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CB7FC9E7250D1D4C00B3CBF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB7FC9E9250D1D4C00B3CBF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB7FC9F6250FC88600B3CBF7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		CB7FC9F2250FB14500B3CBF7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */,
 				CB7FC9DF250D1D4C00B3CBF7 /* TodoListViewController.swift */,
 			);
 			path = Controllers;
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7FCA1C25103DD400B3CBF7 /* CategoryViewController.swift in Sources */,
 				CB7FC9F7250FC88600B3CBF7 /* DataModel.xcdatamodeld in Sources */,
 				CB7FC9E0250D1D4C00B3CBF7 /* TodoListViewController.swift in Sources */,
 				CB7FC9DC250D1D4C00B3CBF7 /* AppDelegate.swift in Sources */,
