@@ -14,8 +14,7 @@ class CategoryViewController: UITableViewController {
     
     let realm = try! Realm()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var categories = [Category]()
+    var categories: Results<Category>?
     
 
     override func viewDidLoad() {
@@ -42,21 +41,16 @@ class CategoryViewController: UITableViewController {
     }
     
     func loadCategories() {
-//        let request: NSFetchRequest<Category> = Category.fetchRequest()
-//        
-//        do {
-//            categories = try context.fetch(request)
-//        } catch {
-//            print("error fetching data from context \(error)")
-//        }
-//        tableView.reloadData()
+        categories = realm.objects(Category.self)
+        
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TodoListViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = categories[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
         
     }
@@ -72,7 +66,6 @@ class CategoryViewController: UITableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
-            self.categories.append(newCategory)
             
             self.save(category: newCategory)
         }
@@ -88,15 +81,13 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Datasource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        let category = categories[indexPath.row]
-        
-        cell.textLabel?.text = category.name
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories added yet."
         
         return cell
     }
