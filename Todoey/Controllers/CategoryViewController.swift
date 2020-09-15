@@ -13,7 +13,7 @@ class CategoryViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var categories = [Category]()
-    var category = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,10 @@ class CategoryViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TodoListViewController
         
-        destinationVC.title = category
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCategory = categories[indexPath.row]
+        }
+        
     }
     
     
@@ -98,8 +101,6 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        category = categories[indexPath.row].name ?? ""
-        
         performSegue(withIdentifier: "goToItems", sender: self)
     }
     
