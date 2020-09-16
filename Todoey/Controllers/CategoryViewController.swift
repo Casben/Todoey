@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import CoreData
 import RealmSwift
 
 class CategoryViewController: UITableViewController {
+    
+    //MARK: - Properties
     
     let realm = try! Realm()
     
@@ -23,6 +24,7 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - Configuration
+    
     func configure() {
         loadCategories()
     }
@@ -57,6 +59,7 @@ class CategoryViewController: UITableViewController {
     
     
     //MARK: - Helpers
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
