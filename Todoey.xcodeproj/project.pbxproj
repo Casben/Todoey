@@ -17,6 +17,7 @@
 		CB7FCA1C25103DD400B3CBF7 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */; };
 		CBC8CCF42510FFD100E36778 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8CCF32510FFD100E36778 /* Item.swift */; };
 		CBC8CCF62510FFDC00E36778 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8CCF52510FFDC00E36778 /* Category.swift */; };
+		CBC8CCF82511D60B00E36778 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8CCF72511D60B00E36778 /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CBC8CCF32510FFD100E36778 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CBC8CCF52510FFDC00E36778 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CBC8CCF72511D60B00E36778 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		E69B70E784A50C2B7414BB61 /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 			children = (
 				CB7FCA1B25103DD400B3CBF7 /* CategoryViewController.swift */,
 				CB7FC9DF250D1D4C00B3CBF7 /* TodoListViewController.swift */,
+				CBC8CCF72511D60B00E36778 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CB7FCA1C25103DD400B3CBF7 /* CategoryViewController.swift in Sources */,
 				CB7FC9E0250D1D4C00B3CBF7 /* TodoListViewController.swift in Sources */,
 				CB7FC9DC250D1D4C00B3CBF7 /* AppDelegate.swift in Sources */,
+				CBC8CCF82511D60B00E36778 /* SwipeTableViewController.swift in Sources */,
 				CBC8CCF42510FFD100E36778 /* Item.swift in Sources */,
 				CB7FC9DE250D1D4C00B3CBF7 /* SceneDelegate.swift in Sources */,
 				CBC8CCF62510FFDC00E36778 /* Category.swift in Sources */,
