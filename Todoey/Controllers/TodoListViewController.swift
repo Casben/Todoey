@@ -32,7 +32,8 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: - Configuration
     
-    func configure() {
+    override func configure() {
+        super.configure()
         self.title = selectedCategory?.name
     }
     
@@ -46,7 +47,7 @@ class TodoListViewController: SwipeTableViewController {
     }
     
     override func updateModel(at indexPath: IndexPath) {
-        if let itemToBeDeleted = self.todoItems?[indexPath.row] {
+        if let itemToBeDeleted = todoItems?[indexPath.row] {
             do {
                 try self.realm.write {
                     self.realm.delete(itemToBeDeleted)
