@@ -36,6 +36,10 @@ class TodoListViewController: SwipeTableViewController {
     override func configure() {
         super.configure()
         title = selectedCategory?.name
+        
+        if let colorHex = selectedCategory?.backgroundColor {
+            navigationController?.navigationBar.barTintColor = UIColor(hexString: colorHex)
+        }
     }
     
     
