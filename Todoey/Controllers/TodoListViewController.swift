@@ -24,11 +24,20 @@ class TodoListViewController: SwipeTableViewController {
         }
     }
     
-    //MARK: - Lifecycle
+    //MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let colorHex = selectedCategory?.backgroundColor {
+            guard let navbar = navigationController?.navigationBar else { return }
+            navbar.barTintColor = UIColor(hexString: colorHex)
+        }
     }
     
     //MARK: - Configuration
@@ -37,9 +46,7 @@ class TodoListViewController: SwipeTableViewController {
         super.configure()
         title = selectedCategory?.name
         
-        if let colorHex = selectedCategory?.backgroundColor {
-            navigationController?.navigationBar.barTintColor = UIColor(hexString: colorHex)
-        }
+        
     }
     
     
