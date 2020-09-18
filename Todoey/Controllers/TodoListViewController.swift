@@ -14,6 +14,7 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: - Properties
     
+    @IBOutlet weak var searchBar: UISearchBar!
     let realm = try! Realm()
     
     var todoItems: Results<Item>?
@@ -26,28 +27,22 @@ class TodoListViewController: SwipeTableViewController {
     
     //MARK: - Lifecycles
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configure()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         if let colorHex = selectedCategory?.backgroundColor {
+            title = selectedCategory!.name
             guard let navbar = navigationController?.navigationBar else { return }
-            navbar.barTintColor = UIColor(hexString: colorHex)
+            
+            if let navBarColor = UIColor(hexString: colorHex) {
+                navbar.barTintColor = navBarColor
+                navbar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
+                navbar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
+                searchBar.barTintColor = navBarColor
+            }
+            
         }
     }
     
-    //MARK: - Configuration
-    
-    override func configure() {
-        super.configure()
-        title = selectedCategory?.name
-        
-        
-    }
     
     
     //MARK: - Methods
