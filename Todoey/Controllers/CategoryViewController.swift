@@ -118,9 +118,6 @@ class CategoryViewController: SwipeTableViewController {
             cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
         }
         
-        
-        
-        
         return cell
     }
     
